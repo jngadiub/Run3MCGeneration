@@ -51,7 +51,7 @@ crab submit -c crab_VBF_HH_CV_1_C2V_1_C3_1_TuneCP5_PSweights_14TeV-madgraph-pyth
 
 cmsDriver sequence in the file `VectorZPrimeToQQ_M100_pT300_TuneCP5_14TeV_madgraph_pythia8.py` taken from https://cms-pdmv.cern.ch/mcm/requests?prepid=TSG-Run3Winter20wmLHEGS-00014&page=0&shown=1099512152191 (GEN-SIM step) and https://cms-pdmv.cern.ch/mcm/requests?prepid=TSG-Run3Winter20DRPremixMiniAOD-00082&page=0&shown=127 (DIGI-RAW step)
 
-To test it: `cmsRun .VectorZPrimeToQQ_M100_pT300_TuneCP5_14TeV_madgraph_pythia8.py`
+To test it: `cmsRun VectorZPrimeToQQ_M100_pT300_TuneCP5_14TeV_madgraph_pythia8.py`
 
 ```
 curl https://cms-pdmv.cern.ch/mcm/public/restapi/requests/get_fragment/TSG-Run3Winter20wmLHEGS-00014/0 -o Configuration/GenProduction/python/TSG-Run3Winter20wmLHEGS-00014-fragment.py
