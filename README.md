@@ -10,6 +10,8 @@ cd CMSSW_11_0_0_patch1/src
 mkdir Configuration
 mkdir Configuration/GenProduction
 mkdir Configuration/GenProduction/python
+source /cvmfs/cms.cern.ch/crab3/crab.sh
+voms-proxy-init -voms cms --valid 168:0
 ```
 
 ### VBF_HToInvisible
@@ -18,5 +20,6 @@ CmsDriver sequence from https://cms-pdmv.cern.ch/mcm/requests?prepid=TSG-Run3Win
 
 ```
 curl https://cms-pdmv.cern.ch/mcm/public/restapi/requests/get_fragment/TSG-Run3Winter20wmLHEGS-00004/0 -o Configuration/GenProduction/python/TSG-Run3Winter20wmLHEGS-00004-fragment.py
+scram b -j 8
 ```
 
