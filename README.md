@@ -72,3 +72,16 @@ cmsRun VBFHToTauTau_M125_TuneCUETP8M1_14TeV_powheg_pythia8.py #test sequence
 python make-crab-config.py -s VBFHToTauTau_M125_TuneCUETP8M1_14TeV_powheg_pythia8 -o {LNFJOBOUTDIR} -N {NJOBS} -E {EVENTSPERJOB}
 crab submit -c crab_VBFHToTauTau_M125_TuneCUETP8M1_14TeV_powheg_pythia8.py
 ```
+
+### GluGluToHHTo4B
+
+cmsDriver sequence in the file  `GluGluToHHTo4B_node_SM_TuneCP5_14TeV-madgraph-pythia8.py` take from https://cms-pdmv.cern.ch/mcm/requests?prepid=TSG-Run3Winter20wmLHEGS-00008&page=0&shown=1099512152191 (GEN-SIM step) and https://cms-pdmv.cern.ch/mcm/requests?prepid=TSG-Run3Winter20DRPremixMiniAOD-00080&page=0&shown=127 (DIGI-RAW step)
+
+```
+curl https://cms-pdmv.cern.ch/mcm/public/restapi/requests/get_fragment/TSG-Run3Winter20wmLHEGS-00008/0 -o Configuration/GenProduction/python/TSG-Run3Winter20wmLHEGS-00008-fragment.pyscram b -j 8
+git clone https://github.com/jngadiub/Run3MCGeneration.git
+cd Run3MCGeneration
+cmsRun GluGluToHHTo4B_node_SM_TuneCP5_14TeV-madgraph-pythia8.py #test sequence
+python make-crab-config.py -s GluGluToHHTo4B_node_SM_TuneCP5_14TeV-madgraph-pythia8 -o {LNFJOBOUTDIR} -N {NJOBS} -E {EVENTSPERJOB}
+crab submit -c crab_GluGluToHHTo4B_node_SM_TuneCP5_14TeV-madgraph-pythia8.py
+```
