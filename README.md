@@ -85,3 +85,16 @@ cmsRun GluGluToHHTo4B_node_SM_TuneCP5_14TeV-madgraph-pythia8.py #test sequence
 python make-crab-config.py -s GluGluToHHTo4B_node_SM_TuneCP5_14TeV-madgraph-pythia8 -o {LNFJOBOUTDIR} -N {NJOBS} -E {EVENTSPERJOB}
 crab submit -c crab_GluGluToHHTo4B_node_SM_TuneCP5_14TeV-madgraph-pythia8.py
 ```
+
+### ZprimeToZH_MZprime600_MZ50_MH80_ZTouds_HTouds
+
+cmsDriver sequence in the file `ZprimeToZH_MZprime600_MZ50_MH80_ZTouds_HTouds_narrow_TuneCP5_14TeV_madgraph_pythia8.py` taken from https://cms-pdmv.cern.ch/mcm/requests?prepid=TSG-Run3Winter20wmLHEGS-00019&page=0&shown=1099512152191 (GEN-SIM step) and https://cms-pdmv.cern.ch/mcm/requests?prepid=TSG-Run3Winter20DRPremixMiniAOD-00084&page=0&shown=127 (DIGI-RAW step)
+
+```
+curl https://cms-pdmv.cern.ch/mcm/public/restapi/requests/get_fragment/TSG-Run3Winter20wmLHEGS-00019/0 -o Configuration/GenProduction/python/TSG-Run3Winter20wmLHEGS-00019-fragment.py
+git clone https://github.com/jngadiub/Run3MCGeneration.git
+cd Run3MCGeneration
+cmsRun ZprimeToZH_MZprime600_MZ50_MH80_ZTouds_HTouds_narrow_TuneCP5_14TeV_madgraph_pythia8.py #test sequence
+python make-crab-config.py -s ZprimeToZH_MZprime600_MZ50_MH80_ZTouds_HTouds_narrow_TuneCP5_14TeV_madgraph_pythia8 -o {LNFJOBOUTDIR} -N {NJOBS} -E {EVENTSPERJOB}
+crab submit -c crab_ZprimeToZH_MZprime600_MZ50_MH80_ZTouds_HTouds_narrow_TuneCP5_14TeV_madgraph_pythia8.py
+```
