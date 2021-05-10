@@ -59,6 +59,20 @@ python make-crab-config.py -s VectorZPrimeToQQ_M100_pT300_TuneCP5_14TeV_madgraph
 crab submit -c crab_VectorZPrimeToQQ_M100_pT300_TuneCP5_14TeV_madgraph_pythia8.py
 ```
 
+### VectorZPrimeToQQ_M200_pT300
+
+cmsDriver sequence in the file `VectorZPrimeToQQ_M200_pT300_TuneCP5_14TeV_madgraph_pythia8.py` taken from https://cms-pdmv.cern.ch/mcm/requests?prepid=TSG-Run3Winter20wmLHEGS-00015&page=0&shown=1099512152191 (GEN-SIM step) and https://cms-pdmv.cern.ch/mcm/requests?prepid=TSG-Run3Winter20DRPremixMiniAOD-00083&page=0&shown=127 (DIGI-RAW step)
+
+```
+curl https://cms-pdmv.cern.ch/mcm/public/restapi/requests/get_fragment/TSG-Run3Winter20wmLHEGS-00015/0 -o Configuration/GenProduction/python/TSG-Run3Winter20wmLHEGS-00015-fragment.py
+scram b -j 8
+git clone https://github.com/jngadiub/Run3MCGeneration.git
+cd Run3MCGeneration
+cmsRun VectorZPrimeToQQ_M200_pT300_TuneCP5_14TeV_madgraph_pythia8.py #test sequence
+python make-crab-config.py -s VectorZPrimeToQQ_M200_pT300_TuneCP5_14TeV_madgraph_pythia8 -o {LNFJOBOUTDIR} -N {NJOBS} -E {EVENTSPERJOB}
+crab submit -c crab_VectorZPrimeToQQ_M200_pT300_TuneCP5_14TeV_madgraph_pythia8.py
+```
+
 ### VBFHToTauTau
 
 cmsDriver sequence in the file `VBFHToTauTau_M125_TuneCUETP8M1_14TeV_powheg_pythia8.py` taken from https://cms-pdmv.cern.ch/mcm/requests?prepid=TSG-Run3Winter20wmLHEGS-00002&page=0&shown=1099512152191 (GEN-SIM step) and https://cms-pdmv.cern.ch/mcm/requests?prepid=TSG-Run3Winter20DRPremixMiniAOD-00072&page=0&shown=127 (DIGI-RAW step)
